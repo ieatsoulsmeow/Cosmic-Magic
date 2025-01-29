@@ -1,6 +1,21 @@
+/* Theme Colours */
+:root {
+    --bg-colour: white;
+    --text-colour: black;
+    --sidebar-bg-colour: lightgrey;
+    --sidebar-border-colour: darkgrey;
+    --sidebar-inside-bg-colour: white;
+    --titlebar-bg-colour: black;
+    --titlebar-text-colour: white;
+}
+
 body {
     margin: 1%;
     margin-top: 5.8%;
+
+    /* Style */
+    background-color: var(--bg-colour);
+    color: var(--text-colour);
 }
 
 @font-face {
@@ -18,10 +33,10 @@ body {
     /* Font */
     font-family: "blackboysonmopeds";
     letter-spacing: 0.2rem;
-    color: white;
+    color: var(--titlebar-text-colour);
 
     /* Style */
-    background-color: black;
+    background-color: var(--titlebar-bg-colour);
 
     /* Sizing */
     width: 100%;
@@ -42,12 +57,17 @@ body {
 
 .themeButton {
     /* Style */
-    border: 3px solid white;
+    border: 3px solid var(--bg-colour);
     border-radius: 20%;
 
     /* Sizing */
     width: 125%;
     aspect-ratio: 1 / 1;
+}
+
+#themeToggle {
+    /* Style*/
+    fill: white;
 }
 
 .sideBar {
@@ -56,8 +76,8 @@ body {
     height: 865px;
 
     /* Style */
-    border: 3px solid darkgrey;
-    background-color: lightgrey;
+    border: 3px solid var(--sidebar-border-colour);
+    background-color: var(--sidebar-bg-colour);
 
     /* Flex  box to allow modFilePath to fill */
     display: flex;
@@ -66,8 +86,8 @@ body {
 
 .sideBarInside {
     /* Style */
-    background-color: white;
-    border: 3px solid darkgrey;
+    background-color: var(--sidebar-inside-bg-colour);
+    border: 3px solid var(--sidebar-border-colour);
 
     /* Sizing */
     margin: 2%;
@@ -105,6 +125,7 @@ body {
     /* Sizing */
     width: 10%;
     aspect-ratio: 1 / 1;
+    border-radius: 20%;
 }
 
 /* Universal */
@@ -113,4 +134,23 @@ body {
     justify-content: center;
     display: flex;
     align-items: center;
+}
+
+.svgIcon {
+    stroke: var(--text-colour);
+    stroke-width: 2;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* Dark mode */
+body.dark {
+    --bg-colour: #292b2f;
+    --text-colour: white;
+    --sidebar-bg-colour: #40444b;
+    --sidebar-border-colour: #2f3136;
+    --sidebar-inside-bg-colour: #2f3136;
+    --titlebar-bg-colour: #202225;
+    --titlebar-text-colour: white;
 }
