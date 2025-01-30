@@ -26,3 +26,16 @@ function toggleDarkMode(body, darkModeIcon) {
         darkModeIcon.src = "assets/icons/dark-mode.svg";
     }
 }
+
+
+//File tree code
+window.addEventListener('load', function () { //Waits until site loads before executing code
+    let toggler = document.getElementsByClassName("folder");
+
+    for (let i = 0; i < toggler.length; i++) {
+    toggler[i].addEventListener("click", function() {
+        this.parentElement.querySelector(".nested").classList.toggle("expanded");
+        this.classList.toggle("folder-down");
+    });
+    }
+})
